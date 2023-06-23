@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PhoneActivity">
+<TextView
+    android:id="@+id/txt1"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Please enter your mobile number"
+    android:textStyle="bold"
+    android:textSize="25sp"
+    android:textColor="@color/black"
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="80dp"
+    />
+    <TextView
+        android:id="@+id/txt2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="You'LL receive a 4 digit code\n\t\t\t\t\t\t to verify next."
+        android:layout_below="@id/txt1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        />
+    <LinearLayout
+        android:id="@+id/ll1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/txt2"
+        android:paddingTop="5dp"
+        android:layout_marginTop="50dp"
+        android:paddingBottom="5dp"
+        android:background="@drawable/enter_mobile_design"
+        android:orientation="horizontal">
+        <com.hbb20.CountryCodePicker
+            app:ccp_defaultNameCode="IND"
+            android:id="@+id/country_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:ccp_autoDetectCountry="true"
+            app:ccp_showFlag="true"
+            app:ccp_showNameCode="false"
+            app:ccp_showFullName="false">
+        </com.hbb20.CountryCodePicker>
+        <EditText
+
+            android:id="@+id/PhoneNumberEdittext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:hint="Mobile Number"
+            android:layout_gravity="center_vertical"
+            android:ems="12"
+            android:maxLength="10"
+            android:inputType="number"
+            />
+    </LinearLayout>
+    <Button
+        android:id="@+id/sendOtpButton"
+        android:layout_width="360dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ll1"
+        android:background="@color/design_color"
+        android:text="CONTINUE"
+        android:textColor="@color/white"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:textSize="16sp"
+        android:paddingBottom="15dp"
+        android:paddingTop="15dp"
+        />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_below="@id/sendOtpButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp"
+        android:layout_height="wrap_content" />
+
+
+</RelativeLayout>
